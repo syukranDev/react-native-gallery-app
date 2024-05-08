@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_KEY = '43776080-dfe2e3a744cfc40640c2fd144';
-const apiUrl = `https://pixabay.com/api/?key=${API_KEY}`;
+const API_KEY = process.env.EXPO_PUBLIC_API_IMAGE_KEY
+const apiUrl = process.env.EXPO_PUBLIC_API_IMAGE_URL + `?key=${API_KEY}`
 
 const formatUrl = (params) => {
     let url =  apiUrl + "&per_page=25&safesearch=true&editors_choice=true"
