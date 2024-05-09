@@ -101,7 +101,7 @@ const HomeScreen = () => {
       
     }
 
-
+    console.log('filters ', filters)
     return (
         // padding top to void element behind dynamic island ios @ top bar android
         <View style={[styles.container, { paddingTop }]}> 
