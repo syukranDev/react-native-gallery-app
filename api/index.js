@@ -5,7 +5,6 @@ const apiUrl = process.env.EXPO_PUBLIC_API_IMAGE_URL + `?key=${API_KEY}`
 
 const formatUrl = (params) => {
     let url =  apiUrl + "&per_page=25&safesearch=true&editors_choice=true"
-    console.log('final url: ', url);
     if(!params) return url
 
     let paramsKey = Object.keys(params);
@@ -14,16 +13,16 @@ const formatUrl = (params) => {
         url += `&${key}=${value}`;
     });
 
-    console.log('final url: ', url);
     return url;
-
+    
 }
 
 export const apiCall = async (params) => {
     try {
         const response = await axios.get(formatUrl(params))
         const { data } = response;
-
+        
+        console.log('final url ===> ', formatUrl(params));
         return { success: true, data}
     } catch (err) {
         console.log(err.message)

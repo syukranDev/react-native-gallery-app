@@ -27,3 +27,7 @@ export const getImageSize = (height, width) => {
     else if (width<height) return 300 //potrait
     else return 200 // square
 }
+
+export const capitalize = str => {
+    return str.replace(/\b\w/g, l => l.toUpperCase())
+}

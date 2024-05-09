@@ -8,7 +8,7 @@ import Animated, { FadeInRight } from 'react-native-reanimated'
 const Categories = ({activeCategory, handleChangeCategory}) => {
   return (
     <FlatList
-        horizontal
+        horizontal={true}
         contentContainerStyle={styles.flatlistContainer}
         showsHorizontalScrollIndicator={false}
         data={data.categories}
