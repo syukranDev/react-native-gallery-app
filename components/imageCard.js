@@ -5,7 +5,7 @@ import { getImageSize } from '../helpers/common'
 import { theme } from '../constants/theme'
 import { wp, hp } from '../helpers/common'
 
-const ImageCard = ({item, index, columns}) => {
+const ImageCard = ({item, index, columns, router}) => {
 
     const getImageHeight = () => {
         let {imageHeight: height, imageWidth: width} = item;
@@ -18,7 +18,7 @@ const ImageCard = ({item, index, columns}) => {
     }
 
   return (
-    <Pressable style={[styles.imageWrapper, !isLastInRow() &&  styles.spacing]}>
+    <Pressable onPress={() => router.push({pathname: 'home/image', params:{...item}})} style={[styles.imageWrapper, !isLastInRow() &&  styles.spacing]}>
         <Image 
             style={[styles.image, getImageHeight()]}
             source={item?.webformatURL}

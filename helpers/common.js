@@ -4,13 +4,13 @@ const { width: deviceWidth, height: deviceHeight} = Dimensions.get('window');
 
 export const wp = percentage => {
     const width = deviceWidth;
-    console.log('W: ' + width)
+    // console.log('W: ' + width)
     return (percentage * width) / 100;
 }
 
 export const hp = percentage => {
     const height = deviceHeight;
-    console.log('H: ' + height)
+    // console.log('H: ' + height)
     return (percentage * height) / 100;
 }
 
